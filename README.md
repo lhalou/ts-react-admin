@@ -30,3 +30,18 @@
 2. --save-dev : devDependencies 开发环境的依赖,执行打包命令之后，不会被打包进去、
 3. user-select: none; 取消文字的选中
 4. -webkit-user-drag: none; 禁止拖欠的拖动
+
+### 路径别名的配置
+
+1. 在vite.config.js中配置
+2. 引入path
+3. alias: {"@":path.resolve(__dirname,'./src)}
+4. 有node环境就应该有path，但是由于使用的是ts，还需要引入path
+`npm i -D @types/node`
+```
+resolve: {
+    alias: {
+      "@": path.resolve(__dirname,'./src')
+    }
+  }
+```
