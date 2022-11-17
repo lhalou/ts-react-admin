@@ -25,4 +25,8 @@
 
 ### SCSS的安装和使用
 
-
+1. 安装
+`npm i --save-dev sass`
+2. --save-dev : devDependencies 开发环境的依赖,执行打包命令之后，不会被打包进去、
+3. user-select: none; 取消文字的选中
+4. -webkit-user-drag: none; 禁止拖欠的拖动
