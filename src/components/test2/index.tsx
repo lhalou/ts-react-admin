@@ -1,5 +1,5 @@
 // import "./index.scss"
-function Test2 () {
+const Test2  = ()  => {
     return <div className="test1">
         这是test 2 组件
     </div>

@@ -63,3 +63,10 @@ resolve: {
 ### scss文件的全局引入会影响其他组件
 
 1. import "./index.scss" //全局引入，会影响到其他组件
+
+### scss的模块化管理方式
+
+1. 为解决上述样式互相影响覆盖的问题，引入了模块化的管理模式
+2. 文件名称：index.module.scss
+3. 引入：import styles from "./index.module.scss"
+4. 使用：<div className = "styles.test1" />
