@@ -45,3 +45,17 @@ resolve: {
     }
   }
 ```
+
+### 配置路径别名提示
+
+1. 在tsconfig.json中进行配置
+```
+"compilerOptions": {
+   baseUrl: "./",
+   "paths": {
+      "@/*": [
+         "src/*"
+      ]
+   }
+}
+```
