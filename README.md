@@ -70,3 +70,10 @@ resolve: {
 2. 文件名称：index.module.scss
 3. 引入：import styles from "./index.module.scss"
 4. 使用：<div className = "styles.test1" />
+
+### Antd的初步使用
+
+1. npm i antd --save
+2. 安装图标所需要的模块
+`npm install --save @ant-design/icons`
+3. 模块的按需引入
