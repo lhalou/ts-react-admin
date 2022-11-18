@@ -77,3 +77,19 @@ resolve: {
 2. 安装图标所需要的模块
 `npm install --save @ant-design/icons`
 3. 模块的按需引入
+
+### 配置Antd样式的自动按需引入
+
+1. npm install vite-plugin-style-import@1.4.1 -D
+```
+plugns: [
+   react(),
+   styleImport({
+      resolves: [
+         AntdResolve()
+      ]
+   })
+]
+```
+2. 安装less：npm i less@2.7.1 -D
+3. antd5.0 已经不需要配置文件样式的按需引入了
