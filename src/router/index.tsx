@@ -4,8 +4,10 @@ import React, { lazy } from "react"
 // import Home from "@/views/home"
 // import About from "@/views/about"
 import  { Navigate } from "react-router-dom";
+import WiteLoading from "@/components/template/wite-loading"
 const Home = lazy(() => import("@/views/home"))
 const About = lazy(() => import("@/views/about"))
+
 const routes = [
     {
         path: "/",
@@ -13,15 +15,11 @@ const routes = [
     },
     {
         path: "/home",
-        element: <React.Suspense fallback={<div>Loading...</div>}>
-            <Home />
-        </React.Suspense>
+        element: WiteLoading( <Home />)
     },
     {
         path: "/about",
-        element:  <React.Suspense fallback={<div>Loading...</div>}>
-            <About />
-        </React.Suspense>
+        element:  WiteLoading( <About />)
     }
 ]
 

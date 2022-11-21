@@ -181,3 +181,17 @@ const routes = [
 
 export default routes
 ```
+
+### 抽取Loading组件函数
+
+```
+import React from "react"
+
+const WiteLoading = (comp:JSX.Element) => {
+    return (<React.Suspense fallback={<div>Loading...</div>}>
+        {comp}
+    </React.Suspense>)
+}
+
+export default WiteLoading
+```
