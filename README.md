@@ -113,4 +113,9 @@ plugns: [
 ### 实现路由跳转
 
 1. Link
-2. 
+
+### 路由重定向
+
+1. Navigate
+2. ` <Route path="/" element={<Navigate to="/home" />} />`
+
