@@ -195,3 +195,6 @@ const WiteLoading = (comp:JSX.Element) => {
 
 export default WiteLoading
 ```
+
+### 首页布局的解决方案
+

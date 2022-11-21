@@ -25,10 +25,11 @@ function App() {
         {/*<Button type="primary">点击按钮</Button>*/}
         {/*<UpCircleOutlined />*/}
         {/*占位符，类似于窗口，用来展示组件，有点像vue中的vue-view*/}
-        <Link to={link}>{`${link === "/home" ? "home" : "about"}`}</Link>
-        <Button onClick={handleClick}>点击</Button>
-        {/*<Outlet />*/}
+        {/*<Link to={link}>{`${link === "/home" ? "home" : "about"}`}</Link>*/}
+        {/*<Button onClick={handleClick}>点击</Button>*/}
+        {/*/!*<Outlet />*!/*/}
         { outLet }
+
     </div>
   )
 }
