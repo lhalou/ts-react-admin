@@ -119,3 +119,31 @@ plugns: [
 1. Navigate
 2. ` <Route path="/" element={<Navigate to="/home" />} />`
 
+### 路由表写法
+
+```
+const routes = [
+    {
+        path: "/",
+        element: <Navigate to={"/home"} />
+    },
+    {
+        path: "/home",
+        element: <Home />
+    },
+    {
+        path: "/abput",
+        element: <About />
+    }
+]
+
+export default routes
+//入口文件
+  <BrowserRouter >
+          <App />
+      </BrowserRouter>
+//App组件
+//hooks路由
+   const outLet = useRoutes(route)
+   { outLet }
+```
