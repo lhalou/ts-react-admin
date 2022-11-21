@@ -93,3 +93,19 @@ plugns: [
 ```
 2. 安装less：npm i less@2.7.1 -D
 3. antd5.0 已经不需要配置文件样式的按需引入了
+
+### 路由基本配置
+
+1. 安装路由：react-router-dom
+2. 路由组件
+3. 路由两种模式:BrowserRouter（history模式）， HashRouter（Hash模式）
+```
+ <BrowserRouter>
+        <Routes>
+            <Route path="/" element={<App/>} >
+                <Route path="/home" element={<Home/>} />
+                <Route path="/about" element={<About/>} />
+            </Route>
+        </Routes>
+    </BrowserRouter>
+```
