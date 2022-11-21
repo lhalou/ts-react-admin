@@ -147,3 +147,37 @@ export default routes
    const outLet = useRoutes(route)
    { outLet }
 ```
+
+### 路由懒加载
+
+1. 懒加载模式，需要给懒加载的组件添加一个懒加载模式，loading组件
+```
+//路由表路由写法
+import App from "@/App"
+import React, { lazy } from "react"
+// import Home from "@/views/home"
+// import About from "@/views/about"
+import  { Navigate } from "react-router-dom";
+const Home = lazy(() => import("@/views/home"))
+const About = lazy(() => import("@/views/about"))
+const routes = [
+    {
+        path: "/",
+        element: <Navigate to={"/home"} />
+    },
+    {
+        path: "/home",
+        element: <React.Suspense fallback={<div>Loading</div>}>
+            <Home />
+        </React.Suspense>
+    },
+    {
+        path: "/about",
+        element:  <React.Suspense fallback={<div>Loading</div>}>
+            <About />
+        </React.Suspense>
+    }
+]
+
+export default routes
+```
