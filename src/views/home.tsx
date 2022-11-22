@@ -7,7 +7,7 @@ import {
 } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Breadcrumb, Layout, Menu } from 'antd';
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import { useNavigate, Outlet } from "react-router-dom";
 
 const { Header, Content, Footer, Sider } = Layout;
@@ -42,6 +42,12 @@ const items: MenuItem[] = [
 
 const View: React.FC = () => {
     const [collapsed, setCollapsed] = useState(false);
+    const [menuKey, setMenuKey ] = useState(window.location.pathname);
+    // useEffect(()=>{
+    //     setMenuKey( window.location.pathname)
+    // },[
+    //     window.location.pathname
+    // ])
     const useNavigateTo = useNavigate()
     const handleMenuClick = (e:{key: string}) => {
         useNavigateTo(e.key)
@@ -50,7 +56,7 @@ const View: React.FC = () => {
         <Layout style={{ minHeight: '100vh' }}>
             <Sider collapsible collapsed={collapsed} onCollapse={value => setCollapsed(value)}>
                 <div className="logo" />
-                <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} onClick={handleMenuClick}/>
+                <Menu theme="dark" selectedKeys={[menuKey]} mode="inline" items={items} onClick={handleMenuClick}/>
             </Sider>
             <Layout className="site-layout">
                 <Header className="site-layout-background" style={{ paddingLeft: 24 }} >
