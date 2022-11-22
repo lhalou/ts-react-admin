@@ -202,3 +202,11 @@ export default WiteLoading
 
 ### 点击跳转
 
+1. 直接在代码中实现路由的跳转，叫编程式导航跳转，利用到一个hook 
+```
+import { useNavigate } from "react-router-dom";
+ const useNavigateTo = useNavigate()
+ useNavigateTo("/page")
+```
+2. 
+

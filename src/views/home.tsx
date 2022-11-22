@@ -8,6 +8,7 @@ import {
 import type { MenuProps } from 'antd';
 import { Breadcrumb, Layout, Menu } from 'antd';
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -41,9 +42,9 @@ const items: MenuItem[] = [
 
 const View: React.FC = () => {
     const [collapsed, setCollapsed] = useState(false);
+    const useNavigateTo = useNavigate()
     const handleMenuClick = (e:{key: string}) => {
-        console.log("点击了")
-        console.log(e.key)
+        useNavigateTo(e.key)
     }
     return (
         <Layout style={{ minHeight: '100vh' }}>
