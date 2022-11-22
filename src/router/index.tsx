@@ -5,22 +5,35 @@ import React, { lazy } from "react"
 // import About from "@/views/about"
 import  { Navigate } from "react-router-dom";
 import WiteLoading from "@/components/template/wite-loading"
+const Page1 = lazy(() => import("@/views/page1"))
+const Page2 = lazy(() => import("@/views/page2"))
+const Page3 = lazy(() => import("@/views/page3"))
 const Home = lazy(() => import("@/views/home"))
-const About = lazy(() => import("@/views/about"))
-
+//配置嵌套路由表
 const routes = [
     {
         path: "/",
-        element: <Navigate to={"/home"} />
+        element: <Navigate to={"/page1"} />
     },
     {
-        path: "/home",
-        element: WiteLoading( <Home />)
+        path: "/",
+        element: WiteLoading( <Home />),
+        children: [
+            {
+                path: "/page1",
+                element:  WiteLoading( <Page1 />)
+            },
+            {
+                path: "/page2",
+                element:  WiteLoading( <Page2 />)
+            },
+            {
+                path: "/page3",
+                element:  WiteLoading( <Page3 />)
+            }
+        ]
     },
-    {
-        path: "/about",
-        element:  WiteLoading( <About />)
-    }
+
 ]
 
 export default routes

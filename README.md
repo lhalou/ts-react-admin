@@ -208,5 +208,30 @@ import { useNavigate } from "react-router-dom";
  const useNavigateTo = useNavigate()
  useNavigateTo("/page")
 ```
-2. 
+```
+//配置嵌套路由表
+const routes = [
+    {
+        path: "/",
+        element: <Navigate to={"/page1"} />
+    },
+    {
+        path: "/",
+        element: <Home />,
+        children: [
+            {
+                path: "/page1",
+                element:  WiteLoading( <Page1 />)
+            },
+            {
+                path: "/page2",
+                element:  WiteLoading( <Page2 />)
+            }
+        ]
+    },
+
+]
+
+
+```
 

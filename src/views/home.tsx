@@ -8,7 +8,7 @@ import {
 import type { MenuProps } from 'antd';
 import { Breadcrumb, Layout, Menu } from 'antd';
 import React, { useState } from 'react';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Outlet } from "react-router-dom";
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -61,7 +61,7 @@ const View: React.FC = () => {
                 </Header>
                 <Content style={{ margin: '16px 16px 0 16px' }} className="layout-height-container">
                     <div className="site-layout-background layout-height-container" style={{ padding: 24, minHeight: 360 }}>
-                        这是一个大的内容区域
+                        <Outlet />
                     </div>
                 </Content>
                 <Footer style={{ textAlign: 'center', padding: 0, lineHeight: "48px" }}>设计者：小李</Footer>
