@@ -42,7 +42,7 @@ const items: MenuItem[] = [
 
 const View: React.FC = () => {
     const [collapsed, setCollapsed] = useState(false);
-    const [openKeys, setOpenKeys] = useState([""]);
+    const [openKeys, setOpenKeys] = useState<string[]>([]);
     const [menuKey, setMenuKey ] = useState(window.location.pathname);
     // useEffect(()=>{
     //     setMenuKey( window.location.pathname)
