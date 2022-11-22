@@ -198,3 +198,7 @@ export default WiteLoading
 
 ### 首页布局的解决方案
 
+1. antd的layout布局
+
+### 点击跳转
+

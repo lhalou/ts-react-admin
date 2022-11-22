@@ -28,25 +28,28 @@ function getItem(
 }
 
 const items: MenuItem[] = [
-    getItem('菜单1', '1', <PieChartOutlined />),
-    getItem('菜单2', '2', <DesktopOutlined />),
+    getItem('菜单1', '/page1', <PieChartOutlined />),
+    getItem('菜单2', '/page2', <DesktopOutlined />),
     getItem('用户菜单', 'sub1', <UserOutlined />, [
-        getItem('小李', '3'),
-        getItem('小黄', '4'),
-        getItem('小张', '5'),
+        getItem('小李', '/page3'),
+        getItem('小黄', '/page4'),
+        getItem('小张', '/page5'),
     ]),
-    getItem('菜单3', 'sub2', <TeamOutlined />, [getItem('Team 1', '6'), getItem('Team 2', '8')]),
-    getItem('菜单4', '9', <FileOutlined />),
+    getItem('菜单3', 'sub2', <TeamOutlined />, [getItem('Team 1', '/page6'), getItem('Team /page1', '/page7')]),
+    getItem('菜单4', '/page8', <FileOutlined />),
 ];
 
 const View: React.FC = () => {
     const [collapsed, setCollapsed] = useState(false);
-
+    const handleMenuClick = (e:{key: string}) => {
+        console.log("点击了")
+        console.log(e.key)
+    }
     return (
         <Layout style={{ minHeight: '100vh' }}>
             <Sider collapsible collapsed={collapsed} onCollapse={value => setCollapsed(value)}>
                 <div className="logo" />
-                <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} />
+                <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} onClick={handleMenuClick}/>
             </Sider>
             <Layout className="site-layout">
                 <Header className="site-layout-background" style={{ paddingLeft: 24 }} >
