@@ -30,6 +30,10 @@ const routes = [
             {
                 path: "/page3",
                 element:  WiteLoading( <Page3 />)
+            },
+            {
+                path: "/page4",
+                element: <Navigate to={"/page1"} />
             }
         ]
     },
