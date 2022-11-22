@@ -42,6 +42,7 @@ const items: MenuItem[] = [
 
 const View: React.FC = () => {
     const [collapsed, setCollapsed] = useState(false);
+    const [openKeys, setOpenKeys] = useState([""]);
     const [menuKey, setMenuKey ] = useState(window.location.pathname);
     // useEffect(()=>{
     //     setMenuKey( window.location.pathname)
@@ -52,11 +53,29 @@ const View: React.FC = () => {
     const handleMenuClick = (e:{key: string}) => {
         useNavigateTo(e.key)
     }
+    const handleOpenChange = (keys:string[]) => {
+        //keys: 记录了的当前展开的数组key
+        //展开和回收某一项的时候，执行这个函数里面的代码
+        //把数组修改为最后一项
+        if(keys?.length < 1 ) {
+            setOpenKeys(keys)
+        }else {
+            setOpenKeys([keys[keys.length-1]])
+        }
+    }
     return (
         <Layout style={{ minHeight: '100vh' }}>
             <Sider collapsible collapsed={collapsed} onCollapse={value => setCollapsed(value)}>
                 <div className="logo" />
-                <Menu theme="dark" selectedKeys={[menuKey]} mode="inline" items={items} onClick={handleMenuClick}/>
+                <Menu
+                    theme="dark"
+                    selectedKeys={[menuKey]}
+                    mode="inline"
+                    items={items}
+                    onClick={handleMenuClick}
+                    onOpenChange={handleOpenChange}
+                    openKeys={openKeys}
+                />
             </Sider>
             <Layout className="site-layout">
                 <Header className="site-layout-background" style={{ paddingLeft: 24 }} >
