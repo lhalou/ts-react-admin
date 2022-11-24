@@ -1,0 +1,65 @@
+.loginPage {
+  border: 1px solid red;
+  height:calc(100vh - 10px);
+  width: calc(100% - 10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("https://gimg2.baidu.com/image_search/src=http%3A%2F%2Ffile.moyublog.com%2Fd%2Ffile%2F2021-03-08%2F7761569c9c482e265dd59884466382f9.jpg&refer=http%3A%2F%2Ffile.moyublog.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671894379&t=ef7973febf56931441ad187064b48b4a");
+  .loginContainer {
+    width: 300px;
+    height: 600px;
+  }
+  .titleContainer {
+    width:100%;
+    font-family: Arial;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 120px;
+    .title {
+      font-size: 32px;
+      line-height: 24px;
+      font-weight: bold;
+      color: #000;
+      margin-bottom: 8px;
+    }
+    .notice {
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 400;
+      color: #eee;
+    }
+  }
+  .loginForm {
+    margin-top: 20px;
+    border: 1px solid #7095af;
+    border-radius: 4px;
+    padding: 16px;
+    .formTitle {
+      font-size: 24px;
+      line-height: 24px;
+      font-weight: 500;
+      color: #000;
+      width: 100%;
+      text-align: center;
+    }
+    .captchaBox {
+      //display: flex;
+      //flex-direction: row;
+      //align-items: center;
+      //justify-content: center;
+      >input {
+
+      }
+      img {
+        width: 100px;
+        height: 32px;
+        border: 1px solid;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+    }
+  }
+}

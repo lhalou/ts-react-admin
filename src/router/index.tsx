@@ -4,6 +4,7 @@ import React, { lazy } from "react"
 // import Home from "@/views/home"
 // import About from "@/views/about"
 import  { Navigate } from "react-router-dom";
+import Login from "@/views/login"
 import WiteLoading from "@/components/template/wite-loading"
 const Page1 = lazy(() => import("@/views/page1"))
 const Page2 = lazy(() => import("@/views/page2"))
@@ -34,6 +35,10 @@ const routes = [
         ]
     },
     //不是以上的路径，就重定向到page
+    {
+        path: "/login",
+        element: <Login />
+    },
     {
         path: "*",
         element: <Navigate to={"/page1"} />

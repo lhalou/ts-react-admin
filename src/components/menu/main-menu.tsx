@@ -61,13 +61,13 @@ const MainMenu: React.FC =() => {
     const findKey = (obj: {key: string}) => {
         return obj.key === location.pathname
     }
-    for(let i = 0; i< items.length; i++) {
-        if(items[i].children && !!items[i]!.children?.length && items[i]!.children.find(findKey)){
-            firstOpenKey = items[i]!.key :string
-            break;
-        }
+    // for(let i = 0; i< items.length; i++) {
+    //     if(items[i].children && !!items[i]!.children?.length && items[i]!.children.find(findKey)){
+    //         firstOpenKey = items[i]!.key :string
+    //         break;
+    //     }
 
-    }
+    // }
     const [openKeys, setOpenKeys] = useState<string[]>([firstOpenKey]);
     const [menuKey, setMenuKey ] = useState(location.pathname);
 
@@ -93,7 +93,7 @@ const MainMenu: React.FC =() => {
     const handleSelect = (e: {key: string}) => {
         setMenuKey(e.key)
     }
-    return (     <Menu
+    return ( <Menu
         theme="dark"
     selectedKeys={[menuKey]}
     mode="inline"
@@ -102,7 +102,7 @@ const MainMenu: React.FC =() => {
     onOpenChange={handleOpenChange}
     openKeys={openKeys}
     onSelect={handleSelect}
-    />)
+     MenuProps={{}}/>)
 }
 
 export default MainMenu
