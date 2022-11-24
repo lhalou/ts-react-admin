@@ -31,13 +31,13 @@ const routes = [
                 path: "/page3/page301",
                 element:  WiteLoading( <Page3 />)
             },
-            {
-                path: "/page4",
-                element: <Navigate to={"/page1"} />
-            }
         ]
     },
-
+    //不是以上的路径，就重定向到page
+    {
+        path: "*",
+        element: <Navigate to={"/page1"} />
+    }
 ]
 
 export default routes

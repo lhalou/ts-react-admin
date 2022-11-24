@@ -239,5 +239,15 @@ const routes = [
 
 ### 菜单数据的整理
 
+### 其他路径的配置
+
+```
+//访问其余路径的时候，重定向到page1
+{
+        path: "*",
+        element: <Navigate to={"/page1"} />
+    }
+
+```
 
 
