@@ -18,7 +18,7 @@ const items:MenuItem[] = [
     },
     {
         label: "菜单3",
-        key: "/page3",
+        key: "page3",
         icon:  <UserOutlined />,
         children: [
             {
@@ -33,7 +33,7 @@ const items:MenuItem[] = [
     },
     {
         label: "菜单4",
-        key: "/page4",
+        key: "page4",
         icon:  <TeamOutlined />,
         children: [
             {
@@ -55,7 +55,20 @@ const items:MenuItem[] = [
 const MainMenu: React.FC =() => {
     const location = useLocation()
     //window.location.pathname = location.pathname
-    const [openKeys, setOpenKeys] = useState<string[]>([]);
+    //设置展开项的初始值
+    //拿着location.pathname 与items数组的每一项的children的key做对比，如果找到了相同，则将他的父亲的key作为openKeys的初始值
+    let firstOpenKey:string = "";
+    const findKey = (obj: {key: string}) => {
+        return obj.key === location.pathname
+    }
+    for(let i = 0; i< items.length; i++) {
+        if(items[i].children && !!items[i]!.children?.length && items[i]!.children.find(findKey)){
+            firstOpenKey = items[i]!.key :string
+            break;
+        }
+
+    }
+    const [openKeys, setOpenKeys] = useState<string[]>([firstOpenKey]);
     const [menuKey, setMenuKey ] = useState(location.pathname);
 
     // useEffect(()=>{

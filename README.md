@@ -260,3 +260,21 @@ const routes = [
 ```
 
 
+### 配置初始菜单展开项：find新用法
+
+```
+  let firstOpenKey:string = "";
+    const findKey = (obj: {key: string}) => {
+        return obj.key === location.pathname
+    }
+    for(let i = 0; i< items.length; i++) {
+        if(items[i].children && !!items[i].children?.length && items[i].children.find(findKey)){
+            firstOpenKey = items[i].key
+            break;
+        }
+
+    }
+
+```
+
+
