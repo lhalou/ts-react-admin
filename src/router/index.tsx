@@ -28,7 +28,7 @@ const routes = [
                 element:  WiteLoading( <Page2 />)
             },
             {
-                path: "/page3",
+                path: "/page3/page301",
                 element:  WiteLoading( <Page3 />)
             },
             {

@@ -5,30 +5,53 @@ import {useNavigate} from "react-router-dom";
 
 type MenuItem = Required<MenuProps>['items'][number];
 
-function getItem(
-    label: React.ReactNode,
-    key: React.Key,
-    icon?: React.ReactNode,
-    children?: MenuItem[],
-): MenuItem {
-    return {
-        key,
-        icon,
-        children,
-        label,
-    } as MenuItem;
-}
-const items: MenuItem[] = [
-    getItem('菜单1', '/page1', <PieChartOutlined />),
-    getItem('菜单2', '/page2', <DesktopOutlined />),
-    getItem('用户菜单', 'sub1', <UserOutlined />, [
-        getItem('小李', '/page3'),
-        getItem('小黄', '/page4'),
-        getItem('小张', '/page5'),
-    ]),
-    getItem('菜单3', 'sub2', <TeamOutlined />, [getItem('Team 1', '/page6'), getItem('Team /page1', '/page7')]),
-    getItem('菜单4', '/page8', <FileOutlined />),
-];
+const items:MenuItem[] = [
+    {
+        label: "菜单1",
+        key: "/page1",
+        icon:  <PieChartOutlined />
+    },
+    {
+        label: "菜单2",
+        key: "/page2",
+        icon:  <DesktopOutlined />
+    },
+    {
+        label: "菜单3",
+        key: "/page3",
+        icon:  <UserOutlined />,
+        children: [
+            {
+                label: "小李",
+                key: "/page3/page301",
+            },
+            {
+                label: "小黄",
+                key: "/page3/page302",
+            },
+        ]
+    },
+    {
+        label: "菜单4",
+        key: "/page4",
+        icon:  <TeamOutlined />,
+        children: [
+            {
+                label: "temp1",
+                key: "/page4/page401",
+            },
+            {
+                label: "temp2",
+                key: "/page4/page402",
+            },
+        ]
+    },
+    {
+        label: "菜单5",
+        key: "/page5",
+        icon:  <FileOutlined />
+    },
+]
 const MainMenu: React.FC =() => {
     const [openKeys, setOpenKeys] = useState<string[]>([]);
     const [menuKey, setMenuKey ] = useState(window.location.pathname);
