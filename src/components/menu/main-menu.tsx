@@ -1,7 +1,7 @@
 import {Menu, MenuProps} from "antd";
 import React, {useState} from "react";
 import {DesktopOutlined, FileOutlined, PieChartOutlined, TeamOutlined, UserOutlined} from "@ant-design/icons";
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useLocation} from "react-router-dom";
 
 type MenuItem = Required<MenuProps>['items'][number];
 
@@ -53,8 +53,11 @@ const items:MenuItem[] = [
     },
 ]
 const MainMenu: React.FC =() => {
+    const location = useLocation()
+    //window.location.pathname = location.pathname
     const [openKeys, setOpenKeys] = useState<string[]>([]);
-    const [menuKey, setMenuKey ] = useState(window.location.pathname);
+    const [menuKey, setMenuKey ] = useState(location.pathname);
+
     // useEffect(()=>{
     //     setMenuKey( window.location.pathname)
     // },[

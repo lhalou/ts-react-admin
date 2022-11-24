@@ -248,6 +248,15 @@ const routes = [
         element: <Navigate to={"/page1"} />
     }
 
+
+```
+
+### 刷新页面时，选中的菜单优化
+
+1. import {useNavigate, useLocation} from "react-router-dom";
+```
+    const location = useLocation()
+    window.location.pathname = location.pathname
 ```
 
 
