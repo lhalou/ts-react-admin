@@ -9,5 +9,8 @@ export default {
         "changeVal": (newState: {num: number}, action: {type: string, val: number}) => {
             newState.num += action.val
         }
-    }
+    },
+    //名字统一管理
+    add: "add",
+    changeVal: "changeVal"
 }

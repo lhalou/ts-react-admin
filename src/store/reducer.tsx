@@ -9,11 +9,11 @@ let reducer = (state=defaultState, action: {type: string, val: number}) => {
     //对旧的状态进行深拷贝
     const newState = JSON.parse(JSON.stringify(state))
     switch (action.type) {
-        case "add" :
-            handleNum.actions.add(newState, action)
+        case handleNum.add :
+            handleNum.actions[handleNum.add](newState, action)
             break;
-        case "changeVal" :
-            handleNum.actions.changeVal(newState, action)
+        case handleNum.changeVal :
+            handleNum.actions[handleNum.changeVal](newState, action)
             break;
     }
     return newState
