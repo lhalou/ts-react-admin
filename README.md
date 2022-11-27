@@ -307,4 +307,21 @@ import Store from "@/store"
     </Provider>
 ```
 
+### 获取仓库数据
+
+1. 通过useSelector获取仓库数据
+```
+import React from "react"
+import  { useSelector} from "react-redux";
+
+function Page1 () {
+    const  { num } = useSelector((state) => ({
+        num: state.num
+    }))
+    return <div>这是page111{num}</div>
+}
+export default Page1
+```
+2. 如果想在浏览器的开发者工具中看到redux，需要在创建store的时候添加配置项
+3. `const store =  legacy_createStore(redux,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())`
 

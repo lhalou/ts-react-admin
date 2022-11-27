@@ -54,7 +54,7 @@ const items: MenuItem[] = [
 ]
 const MainMenu: React.FC = () => {
     const location = useLocation()
-    const [openKeys, setOpenKeys] = useState<string[]>([firstOpenKey]);
+
     const [menuKey, setMenuKey] = useState(location.pathname);
     const useNavigateTo = useNavigate()
     //window.location.pathname = location.pathname
@@ -65,13 +65,13 @@ const MainMenu: React.FC = () => {
         return obj.key === location.pathname
     }
     for (let i = 0; i < items.length; i++) {
-        if (items[i]?.children.find(findKey)) {
+        if (items[i]?.children?.find(findKey)) {
             firstOpenKey = items[i].key
             break;
         }
 
     }
-
+    const [openKeys, setOpenKeys] = useState<string[]>([firstOpenKey]);
 
     // useEffect(()=>{
     //     setMenuKey( window.location.pathname)
