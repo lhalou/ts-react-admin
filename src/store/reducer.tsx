@@ -1,6 +1,8 @@
 import handleNum from "./num-staus/index"
+import handleArr from "./arr-status/index"
 const defaultState:{num: number} = {
-    ...handleNum.state
+    ...handleNum.state,
+        ...handleArr.state
 }
 
 let reducer = (state=defaultState, action: {type: string, val: number}) => {
@@ -15,6 +17,9 @@ let reducer = (state=defaultState, action: {type: string, val: number}) => {
         case handleNum.changeVal :
             handleNum.actions[handleNum.changeVal](newState, action)
             break;
+        case handleArr.addArr :
+            handleArr.actions[handleArr.addArr](newState, action)
+            break
     }
     return newState
 }

@@ -4,8 +4,9 @@ import { Button } from "antd"
 // import store from "@/store"
 // type RootState = ReturnType<typeof store.getState>
 function Page1 () {
-    const  { num } = useSelector((state:RootState) => ({
-        num: state.num
+    const  { num, arrList } = useSelector((state:RootState) => ({
+        num: state.num,
+        arrList: state.arrList
     }))
     const dispatch = useDispatch()
     const handleChangeNum = () => {
@@ -21,10 +22,20 @@ function Page1 () {
             val: 34
         })
     }
+    const handleChangeArr = () => {
+        dispatch({
+            type: 'addArr',
+            val: Math.random() * 10
+        })
+    }
     return <div>
         这是page111{num}
+        <div>
+            {arrList.join(',')}
+        </div>
         <Button onClick={handleChangeNum}>修改值</Button>
         <Button onClick={handleChangeAddNum}>+ 34</Button>
+        <Button onClick={handleChangeArr}>改变数组</Button>
     </div>
 }
 export default Page1
