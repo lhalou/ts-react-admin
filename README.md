@@ -337,3 +337,21 @@ export default Page1
 //ts 提供了ReturnType获取函数类型的返回值
 type RootState = ReturnType<typeof store.getState>`
 2. 创建一个声明文件store.d.ts
+
+### reducer 需要模块化
+
+1. combineReducers 合并reducer
+2. 组合各个模块的reducer
+```
+import handleNum from "./num-staus/index"
+import handleArr from "./arr-status/index"
+import  { combineReducers } from "redux";
+
+
+const reducers = combineReducers({
+    handleNum,
+    handleArr
+})
+
+export default reducers
+```

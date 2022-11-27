@@ -1,13 +1,18 @@
 import React from "react"
 import  { useSelector, useDispatch } from "react-redux";
 import { Button } from "antd"
+import handleNum from "@/store/num-staus";
+import handleArr from "@/store/arr-status";
 // import store from "@/store"
 // type RootState = ReturnType<typeof store.getState>
 function Page1 () {
-    const  { num, arrList } = useSelector((state:RootState) => ({
-        num: state.num,
-        arrList: state.arrList
-    }))
+
+    const  { num, arrList } = useSelector((state:RootState) => {
+        console.log(state,'state')
+        return {
+        num: state.handleNum.num,
+        arrList: state.handleArr.arrList
+    }})
     const dispatch = useDispatch()
     const handleChangeNum = () => {
         //只要执行了dispatch，就会执行reducer
