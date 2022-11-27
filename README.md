@@ -281,4 +281,30 @@ const routes = [
 
 1. Chrome扩展程序安装
 
+### ReactRedux的基本配置
+
+1. 状态管理工具
+2. 安装 npm i
+3. 使用
+```
+1. import  { legacy_createStore } from "redux";
+2. const store =  legacy_createStore(redux)
+3. const defaultState = {
+    
+}
+let reducer = (state) => {
+    return newState
+}
+```
+4. 项目与状态关联上
+```
+import { Provider} from "react-redux";
+import Store from "@/store"
+<Provider store={Store}>
+        <BrowserRouter >
+            <App />
+        </BrowserRouter>
+    </Provider>
+```
+
 
