@@ -325,3 +325,6 @@ export default Page1
 2. 如果想在浏览器的开发者工具中看到redux，需要在创建store的时候添加配置项
 3. `const store =  legacy_createStore(redux,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())`
 
+### 修改仓库的数据---useDispatch
+
+1. `import { useDispatch } from "react-redux`
