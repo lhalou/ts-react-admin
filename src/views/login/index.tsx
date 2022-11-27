@@ -15,7 +15,7 @@ const Login:React.FC = () => {
     const handleChangeCaptcha = (e:ChangeEvent<HTMLInputElement>) => {
         setCaptcha(e.target.value)
     }
-    const handleClick = (e:MouseEvent) => {
+    const handleClick = (e: MouseEvent) => {
         e.stopPropagation()
         console.log(name,'name')
         console.log(password,'password')

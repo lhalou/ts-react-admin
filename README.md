@@ -277,4 +277,8 @@ const routes = [
 
 ```
 
+### redux-dev-tools  的用法
+
+1. Chrome扩展程序安装
+
 
