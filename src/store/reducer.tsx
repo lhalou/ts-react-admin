@@ -1,5 +1,6 @@
+import handleNum from "./num-staus/index"
 const defaultState:{num: number} = {
-    num: 20
+    ...handleNum.state
 }
 
 let reducer = (state=defaultState, action: {type: string, val: number}) => {
@@ -9,10 +10,10 @@ let reducer = (state=defaultState, action: {type: string, val: number}) => {
     const newState = JSON.parse(JSON.stringify(state))
     switch (action.type) {
         case "add" :
-            newState.num ++
+            handleNum.actions.add(newState, action)
             break;
         case "changeVal" :
-            newState.num += action.val
+            handleNum.actions.changeVal(newState, action)
             break;
     }
     return newState
