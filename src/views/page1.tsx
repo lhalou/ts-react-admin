@@ -1,9 +1,10 @@
 import React from "react"
 import  { useSelector, useDispatch } from "react-redux";
 import { Button } from "antd"
-//通过useSelector获取仓库的数据
+// import store from "@/store"
+// type RootState = ReturnType<typeof store.getState>
 function Page1 () {
-    const  { num } = useSelector((state) => ({
+    const  { num } = useSelector((state:RootState) => ({
         num: state.num
     }))
     const dispatch = useDispatch()

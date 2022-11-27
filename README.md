@@ -328,3 +328,12 @@ export default Page1
 ### 修改仓库的数据---useDispatch
 
 1. `import { useDispatch } from "react-redux`
+
+### 解决ts的报错
+
+1. ts 提供了ReturnType获取函数类型的返回值
+`import store from "@/store"
+//通过useSelector获取仓库的数据
+//ts 提供了ReturnType获取函数类型的返回值
+type RootState = ReturnType<typeof store.getState>`
+2. 创建一个声明文件store.d.ts

@@ -1,4 +1,4 @@
-const defaultState = {
+const defaultState:{num: number} = {
     num: 20
 }
 
