@@ -9,5 +9,8 @@ export default {
 
     },
     //名字统一管理
-    addArr: "addArr",
+    // addArr: "addArr",
+    actionNames: {
+        addArr: "addArr",
+    }
 }

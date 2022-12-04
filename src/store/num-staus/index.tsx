@@ -11,6 +11,11 @@ export default {
         }
     },
     //名字统一管理
-    add: "add",
-    changeVal: "changeVal"
+    // add: "add",
+    // changeVal: "changeVal"
+
+    actionNames: {
+        add: "add",
+        changeVal: "changeVal"
+    }
 }

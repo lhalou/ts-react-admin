@@ -355,3 +355,5 @@ const reducers = combineReducers({
 
 export default reducers
 ```
+
+#### switch...case语句自动生成
