@@ -358,3 +358,5 @@ export default reducers
 
 #### switch...case语句自动生成
 
+
+### redux-thunk 的使用（为了异步)

@@ -1,7 +1,10 @@
-import  { legacy_createStore } from "redux";
+import  { applyMiddleware, legacy_createStore, compose } from "redux";
 import redux from "./reducer"
 //常见数据仓库
+import thunk from 'redux-thunk'
 import reducers from "./reducer"
-const store =  legacy_createStore(reducers,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({}) :compose
+const store =  legacy_createStore(reducers,composeEnhancers(applyMiddleware(thunk)))
 
 export default store
