@@ -25,11 +25,12 @@ function Page1 () {
     //异步写法
     const handleChnage2  = () => {
        
-        dispatch((dis: Function) => {
-            setTimeout(() =>{
-                dis({type: "changeVal", val: 111111})
-            },1000)
-        })
+        // dispatch((dis: Function) => {
+        //     setTimeout(() =>{
+        //         dis({type: "changeVal", val: 111111})
+        //     },1000)
+        // })
+        dispatch(handleNum.asyncActions.asyncAdd)
     }
     const handleChangeAddNum = () => {
         dispatch({
