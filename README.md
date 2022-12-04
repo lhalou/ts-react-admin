@@ -359,4 +359,25 @@ export default reducers
 #### switch...case语句自动生成
 
 
-### redux-thunk 的使用（为了异步)
+### redux-thunk 的使用（为了异步) 
+
+1. 原生的redux没有异步效果
+2. npm i redux-thunk
+3. redux-thunk异步写法
+```
+//修改store
+import thunk from 'redux-thunk'
+import reducers from "./reducer"
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({}) :compose
+const store =  legacy_createStore(reducers,composeEnhancers(applyMiddleware(thunk)))
+
+export default store
+//使用
+ dispatch((dis: Function) => {
+            setTimeout(() =>{
+                dis({type: "changeVal", val: 111111})
+            },1000)
+        })
+```
+

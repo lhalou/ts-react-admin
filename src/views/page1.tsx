@@ -6,6 +6,7 @@ import handleArr from "@/store/arr-status";
 // import store from "@/store"
 // type RootState = ReturnType<typeof store.getState>
 function Page1 () {
+    
 
     const  { num, arrList } = useSelector((state:RootState) => {
         console.log(state,'state')
@@ -16,9 +17,18 @@ function Page1 () {
     const dispatch = useDispatch()
     const handleChangeNum = () => {
         //只要执行了dispatch，就会执行reducer
-
+        //同步写法  dispatch({type: "add"})
         dispatch({
             type: "add"
+        })
+    }
+    //异步写法
+    const handleChnage2  = () => {
+       
+        dispatch((dis: Function) => {
+            setTimeout(() =>{
+                dis({type: "changeVal", val: 111111})
+            },1000)
         })
     }
     const handleChangeAddNum = () => {
@@ -41,6 +51,7 @@ function Page1 () {
         <Button onClick={handleChangeNum}>修改值</Button>
         <Button onClick={handleChangeAddNum}>+ 34</Button>
         <Button onClick={handleChangeArr}>改变数组</Button>
+        <Button onClick={handleChnage2}>测试异步</Button>
     </div>
 }
 export default Page1
