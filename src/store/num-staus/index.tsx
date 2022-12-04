@@ -1,4 +1,4 @@
-export default {
+const store =  {
     state: {
         num: 20,
     },
@@ -13,9 +13,15 @@ export default {
     //名字统一管理
     // add: "add",
     // changeVal: "changeVal"
-
+    //自动生成axtionNames
     actionNames: {
-        add: "add",
-        changeVal: "changeVal"
+        // add: "add",
+        // changeVal: "changeVal"
     }
 }
+let actionNames = {};
+for(let key in store.actions ) {
+    actionNames[key] = key
+}
+store.actionNames = actionNames
+export default store
